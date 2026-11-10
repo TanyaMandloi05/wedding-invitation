@@ -21,18 +21,21 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
         </svg>
       </div>
 
-      {/* Decorative Gold Filigree Top Border */}
+      {/* Top Banner: We are getting married with heart above */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
-        className="flex items-center justify-center gap-3 mb-4"
+        className="flex flex-col items-center justify-center mb-4"
       >
-        <span className="w-12 sm:w-24 h-[1px] bg-gradient-to-r from-transparent to-[#C5A059]" />
-        <span className="font-tenor text-xs sm:text-sm tracking-[0.35em] uppercase text-[#9B782E] font-medium">
-          Royal Reception Celebration
-        </span>
-        <span className="w-12 sm:w-24 h-[1px] bg-gradient-to-l from-transparent to-[#C5A059]" />
+        <Heart className="w-4 h-4 text-[#B33951] fill-[#B33951] mb-1.5" />
+        <div className="flex items-center justify-center gap-3">
+          <span className="w-12 sm:w-24 h-[1px] bg-gradient-to-r from-transparent to-[#C5A059]" />
+          <span className="font-tenor text-xs sm:text-sm tracking-[0.35em] uppercase text-[#9B782E] font-medium">
+            We are getting married
+          </span>
+          <span className="w-12 sm:w-24 h-[1px] bg-gradient-to-l from-transparent to-[#C5A059]" />
+        </div>
       </motion.div>
 
       {/* Top Video Button: Allows guests to watch full video invitation immediately without scrolling */}
@@ -122,17 +125,7 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
               className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
             />
             {/* Subtle Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#2C2420]/50 via-transparent to-transparent opacity-60" />
-            
-            {/* Overlay Badge */}
-            <div className="absolute bottom-4 inset-x-0 text-center text-white px-3">
-              <p className="font-cinzel text-xs tracking-[0.25em] uppercase text-[#F3E5AB]">
-                Wedding Reception
-              </p>
-              <p className="font-cormorant italic text-sm text-[#FAF6F0]/90">
-                Forever &amp; Always
-              </p>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#2C2420]/20 via-transparent to-transparent opacity-40" />
           </div>
         </div>
 

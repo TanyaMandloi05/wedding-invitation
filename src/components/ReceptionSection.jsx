@@ -38,8 +38,8 @@ export default function ReceptionSection() {
       `Join us in celebrating the Wedding Reception of ${couple.groom} & ${couple.bride} at ${venue.name}.`
     );
     const location = encodeURIComponent(`${venue.name}, ${venue.address}`);
-    // Target: 24 Nov 2026, 19:30 IST to 23:30 IST (14:00 to 18:00 UTC)
-    const dates = '20261124T140000Z/20261124T180000Z';
+    // Target: 24 Nov 2026, 19:00 IST to 23:30 IST (13:30 to 18:00 UTC)
+    const dates = '20261124T133000Z/20261124T180000Z';
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=${dates}`;
     window.open(googleCalendarUrl, '_blank', 'noopener,noreferrer');
   };

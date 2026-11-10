@@ -57,7 +57,7 @@ export default function WeddingCountdown() {
         <div className="flex items-center justify-center gap-2 text-[#9B782E] mb-2">
           <Clock className="w-4 h-4 text-[#C5A059]" />
           <span className="font-tenor text-xs uppercase tracking-[0.3em]">
-            Counting Every Precious Moment
+            THE WAIT IS ALMOST OVER
           </span>
           <Clock className="w-4 h-4 text-[#C5A059]" />
         </div>

@@ -5,7 +5,7 @@ import { weddingConfig } from '../data/weddingConfig';
 
 /**
  * VenueSection - Eden Garden Marriage Garden & Resort location details
- * Includes address, timing, interactive Google Maps link, and "Get Directions" action
+ * Includes address, timing, reliable map embed with MR-10 coordinates, and "Get Directions" action.
  */
 export default function VenueSection() {
   const { venue } = weddingConfig;
@@ -32,7 +32,7 @@ export default function VenueSection() {
           Wedding Venue
         </h2>
         <p className="font-cormorant italic text-lg sm:text-xl text-[#7A6F68] mt-2">
-          Where our auspicious union begins under open starlit skies
+          Where our auspicious union begins, surrounded by love and blessings.
         </p>
       </motion.div>
 
@@ -63,7 +63,7 @@ export default function VenueSection() {
               </h3>
             </div>
 
-            {/* Address */}
+            {/* Address with standard lining numbers for MR-10 */}
             <div className="flex items-start gap-3.5">
               <div className="w-10 h-10 rounded-full bg-[#FAF0F2] flex items-center justify-center shrink-0 border border-[#F4D3D7]">
                 <MapPin className="w-5 h-5 text-[#B33951]" />
@@ -72,8 +72,9 @@ export default function VenueSection() {
                 <p className="font-tenor text-xs uppercase tracking-wider text-[#9B782E] font-semibold">
                   Complete Address
                 </p>
-                <p className="font-cormorant text-lg text-[#2C2420] font-medium leading-snug mt-0.5">
-                  {venue.address}
+                {/* Rendered in font-sans to guarantee MR-10 displays standard tall lining numerals 1 and 0, not old-style io */}
+                <p className="font-sans text-base sm:text-lg text-[#2C2420] font-medium leading-snug mt-1">
+                  <span className="font-semibold tracking-wide">MR-10</span>, Near Bridge, New Bus Stand, Indore, Madhya Pradesh, India
                 </p>
               </div>
             </div>
@@ -105,7 +106,7 @@ export default function VenueSection() {
               </div>
             </div>
 
-            {/* Get Directions Button (Opens Google Maps using actual venue address) */}
+            {/* Get Directions Button */}
             <div className="pt-2">
               <a
                 href={venue.googleMapsUrl}
@@ -122,18 +123,39 @@ export default function VenueSection() {
 
           {/* Interactive Map Preview Column (Span 5) */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border-2 border-[#D4AF37]/50 shadow-lg aspect-[4/3] bg-[#E8DEC9]">
+            <div className="relative rounded-2xl overflow-hidden border-2 border-[#D4AF37]/50 shadow-lg aspect-[4/3] bg-[#E8DEC9] group">
+              {/* Reliable OpenStreetMap interactive map centered on MR-10 near New Bus Stand, Indore */}
               <iframe
                 title="Eden Garden Indore Map"
-                src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                  venue.name + ', ' + venue.address
-                )}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
-                className="w-full h-full border-0"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=75.8450%2C22.7520%2C75.8850%2C22.7820&layer=mapnik&marker=22.7695%2C75.8642"
+                className="w-full h-full border-0 pointer-events-auto"
                 loading="lazy"
-                allowFullScreen
               />
-              <div className="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-sm text-[10px] font-sans font-medium text-[#2C2420] shadow-sm">
-                Indore, MP
+
+              {/* Floating Map Label with direct Google Maps link */}
+              <a
+                href={venue.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-2.5 right-2.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm text-[11px] font-sans font-semibold text-[#2C2420] shadow-md hover:bg-white hover:text-[#B33951] transition-colors flex items-center gap-1.5 cursor-pointer z-10"
+                title="Open in Google Maps"
+              >
+                <MapPin className="w-3.5 h-3.5 text-[#B33951]" />
+                <span>Eden Garden &bull; <strong className="font-bold">MR-10</strong></span>
+              </a>
+
+              {/* Bottom Quick-action Helper */}
+              <div className="absolute bottom-2.5 left-2.5 pointer-events-none z-10">
+                <a
+                  href={venue.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pointer-events-auto px-3 py-1 rounded-full bg-[#17120F]/85 backdrop-blur-sm text-[11px] font-sans font-medium text-[#FAF6F0] hover:text-[#E6CA65] shadow transition-colors flex items-center gap-1.5"
+                  title="Open live navigation in Google Maps"
+                >
+                  <Navigation className="w-3 h-3 text-[#E6CA65]" />
+                  <span>Open Live Navigation</span>
+                </a>
               </div>
             </div>
           </div>

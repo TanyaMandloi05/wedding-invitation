@@ -116,8 +116,8 @@ export default function OpeningEnvelope({ onOpenInvitation, isOpened }) {
 
               {/* Inner Card Top Header */}
               <div>
-                <p className="font-cinzel text-[10px] sm:text-xs text-[#9B782E] tracking-[0.3em] uppercase">
-                  Royal Reception Invitation
+                <p className="font-cinzel text-[10px] sm:text-xs text-[#9B782E] tracking-[0.3em] uppercase font-semibold">
+                  We Are Getting Married
                 </p>
                 <div className="flex items-center justify-center gap-2 my-1 text-[#C5A059]">
                   <span className="w-8 h-[1px] bg-gradient-to-r from-transparent to-[#C5A059]" />

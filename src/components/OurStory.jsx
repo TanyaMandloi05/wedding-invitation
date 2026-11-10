@@ -4,10 +4,10 @@ import { Heart, Crown, BookOpen } from 'lucide-react';
 import { weddingConfig } from '../data/weddingConfig';
 
 /**
- * OurStory - Couple Introduction (Groom Jay first, then Bride Nimisha) and editorial story milestones
+ * OurStory - Couple Introduction (The Groom Jay & The Bride Nimisha)
  */
 export default function OurStory() {
-  const { couple, storyMilestones, photos } = weddingConfig;
+  const { couple, photos } = weddingConfig;
 
   return (
     <section className="relative py-20 px-4 max-w-5xl mx-auto overflow-hidden">
@@ -18,12 +18,12 @@ export default function OurStory() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-16"
+        className="text-center mb-14"
       >
         <div className="flex items-center justify-center gap-2 text-[#9B782E] mb-2">
           <BookOpen className="w-4 h-4 text-[#C5A059]" />
           <span className="font-tenor text-xs uppercase tracking-[0.3em]">
-            A Love Written In Destiny
+            The Beginning of Forever
           </span>
           <BookOpen className="w-4 h-4 text-[#C5A059]" />
         </div>
@@ -37,10 +37,10 @@ export default function OurStory() {
         </p>
       </motion.div>
 
-      {/* Couple Introductions: Groom Jay FIRST, then Bride Nimisha */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-20 max-w-4xl mx-auto">
+      {/* Couple Introductions: The Groom (Jay) FIRST, then The Bride (Nimisha) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
         
-        {/* 1. Jay - The Groom (Rendered First) */}
+        {/* 1. Jay - The Groom */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -73,7 +73,7 @@ export default function OurStory() {
           </p>
         </motion.div>
 
-        {/* 2. Nimisha - The Bride (Rendered Second) */}
+        {/* 2. Nimisha - The Bride */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -106,60 +106,6 @@ export default function OurStory() {
           </p>
         </motion.div>
 
-      </div>
-
-      {/* Clean Editorial Story Milestones (Text & Gold Timeline without photo clutter) */}
-      <div className="relative max-w-2xl mx-auto">
-        
-        {/* Central Vertical Gold Line */}
-        <div className="absolute left-4 sm:left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-transparent via-[#C5A059] to-transparent sm:-translate-x-1/2" />
-
-        <div className="space-y-10">
-          {storyMilestones.map((item, idx) => {
-            const isEven = idx % 2 === 0;
-
-            return (
-              <motion.div
-                key={item.number}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: idx * 0.1 }}
-                className={`relative flex items-center gap-6 ${
-                  isEven ? 'sm:flex-row' : 'sm:flex-row-reverse'
-                }`}
-              >
-                {/* Central Milestone Badge */}
-                <div className="absolute left-4 sm:left-1/2 top-6 -translate-y-1/2 sm:-translate-x-1/2 z-10 w-8 h-8 rounded-full bg-[#FAF6F0] border-2 border-[#C5A059] flex items-center justify-center shadow-md">
-                  <span className="font-cinzel text-[10px] font-bold text-[#9B782E]">
-                    {item.number}
-                  </span>
-                </div>
-
-                {/* Milestone Text Card */}
-                <div className="w-full sm:w-1/2 pl-12 sm:pl-0 sm:px-6">
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-[#FFFDF9] to-[#FAF6F0] border border-[#D4AF37]/40 shadow-md hover:border-[#D4AF37] hover:shadow-lg transition-all text-left">
-                    <span className="font-tenor text-[10px] tracking-[0.25em] uppercase text-[#9B782E] block mb-1">
-                      Chapter {item.number}
-                    </span>
-                    <h4 className="font-cormorant text-2xl font-bold text-[#2C2420]">
-                      {item.title}
-                    </h4>
-                    <p className="font-script text-lg text-[#B33951] mb-2">
-                      {item.subtitle}
-                    </p>
-                    <p className="font-cormorant text-base text-[#615650] leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Empty side for balanced spacing */}
-                <div className="hidden sm:block sm:w-1/2" />
-              </motion.div>
-            );
-          })}
-        </div>
       </div>
     </section>
   );
