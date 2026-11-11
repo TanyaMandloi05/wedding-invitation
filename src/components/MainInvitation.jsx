@@ -11,10 +11,10 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
   const { couple, invitationMessage, photos } = weddingConfig;
 
   return (
-    <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-4 pt-10 pb-20 overflow-hidden">
+    <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-4 pt-10 pb-20 overflow-visible">
       
       {/* Background Subtle Floral & Mandala Watermarks */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.035]">
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.035] overflow-hidden">
         <svg className="w-[800px] h-[800px] animate-[spin_120s_linear_infinite]" viewBox="0 0 100 100" fill="currentColor">
           <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1" fill="none" />
           <path d="M50 5 Q60 30 75 25 Q60 40 95 50 Q70 60 75 75 Q60 70 50 95 Q40 70 25 75 Q30 60 5 50 Q40 40 25 25 Q40 30 50 5 Z" />
@@ -28,7 +28,7 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
         transition={{ duration: 0.9 }}
         className="flex flex-col items-center justify-center mb-4"
       >
-        <Heart className="w-4 h-4 text-[#B33951] fill-[#B33951] mb-1.5" />
+        <Heart className="w-4 h-4 text-[#B33951] fill-current mb-1.5" />
         <div className="flex items-center justify-center gap-3">
           <span className="w-12 sm:w-24 h-[1px] bg-gradient-to-r from-transparent to-[#C5A059]" />
           <span className="font-tenor text-xs sm:text-sm tracking-[0.35em] uppercase text-[#9B782E] font-medium">
@@ -38,7 +38,7 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
         </div>
       </motion.div>
 
-      {/* Top Video Button: Allows guests to watch full video invitation immediately without scrolling */}
+      {/* Top Video Button */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -67,22 +67,22 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
         {invitationMessage.header}
       </motion.p>
 
-      {/* Couple's Names: Groom Jay FIRST, then Bride Nimisha */}
+      {/* Couple's Names: Groom Jay FIRST, then Bride Nimisha (With Prominent Capital N, No Clipping) */}
       <motion.div
         initial={{ opacity: 0, scale: 0.94 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.35 }}
-        className="my-3 sm:my-5 relative"
+        className="my-3 sm:my-5 relative overflow-visible"
       >
-        <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-[#2C2420] tracking-wide leading-none py-2">
-          <span className="gold-text-gradient font-bold drop-shadow-[0_4px_12px_rgba(197,160,89,0.25)]">
-            {couple.groom}
+        <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-[#2C2420] tracking-wide leading-[1.35] pt-8 pb-4 px-4 overflow-visible">
+          <span className="gold-text-gradient font-bold drop-shadow-[0_4px_12px_rgba(197,160,89,0.25)] inline-block">
+            Jay
           </span>
           <span className="font-cormorant italic text-3xl sm:text-5xl md:text-6xl text-[#B33951] mx-3 sm:mx-5 font-normal align-middle">
             &amp;
           </span>
-          <span className="gold-text-gradient font-bold drop-shadow-[0_4px_12px_rgba(197,160,89,0.25)]">
-            {couple.bride}
+          <span className="gold-text-gradient font-bold drop-shadow-[0_4px_12px_rgba(197,160,89,0.25)] inline-block">
+            <span className="inline-block text-[1.12em]">N</span>imisha
           </span>
         </h1>
 
@@ -94,7 +94,7 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
         </div>
       </motion.div>
 
-      {/* Exact Prompt Quotations */}
+      {/* Quotations */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -124,7 +124,6 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
               alt={photos.weddingAttire.alt}
               className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
             />
-            {/* Subtle Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#2C2420]/20 via-transparent to-transparent opacity-40" />
           </div>
         </div>
@@ -139,14 +138,22 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="mt-8 flex flex-col items-center cursor-pointer"
-        onClick={onScrollDown}
+        className="mt-12 flex flex-col items-center"
       >
-        <span className="font-tenor text-[11px] uppercase tracking-[0.3em] text-[#9B782E] mb-1">
-          Explore The Celebration
-        </span>
-        <ChevronDown className="w-5 h-5 text-[#C5A059] animate-bounce" />
+        <button
+          onClick={onScrollDown}
+          className="flex flex-col items-center text-[#7A6F68] hover:text-[#9B782E] transition-colors cursor-pointer group"
+          aria-label="Scroll to Wedding Reception Details"
+        >
+          <span className="font-tenor text-[11px] uppercase tracking-[0.25em] mb-2 font-medium">
+            Explore Celebration
+          </span>
+          <div className="w-8 h-8 rounded-full border border-[#D4AF37] flex items-center justify-center group-hover:translate-y-1 transition-transform">
+            <ChevronDown className="w-4 h-4 text-[#C5A059]" />
+          </div>
+        </button>
       </motion.div>
+
     </section>
   );
 }

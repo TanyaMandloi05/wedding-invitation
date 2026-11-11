@@ -4,7 +4,7 @@ import { weddingConfig } from '../data/weddingConfig';
 
 /**
  * MusicPlayer - Luxury floating audio player with visualizer
- * Auto-starts on opening envelope click and stays persistent throughout the site.
+ * Positioned safely at top-right to avoid any mobile badges (e.g. Netlify watermark) or bottom navbars.
  */
 export default function MusicPlayer({ audioRef, isPlaying, setIsPlaying }) {
   const [isMuted, setIsMuted] = useState(false);
@@ -50,64 +50,14 @@ export default function MusicPlayer({ audioRef, isPlaying, setIsPlaying }) {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
-      {/* Expanded Controls Card on Hover/Click */}
-      {showControls && (
-        <div className="mb-3 p-4 bg-[#FAF6F0]/95 backdrop-blur-md border border-[#D4AF37]/50 rounded-2xl shadow-xl shadow-[#2C2420]/10 flex flex-col gap-3 min-w-[240px] animate-in fade-in slide-in-from-bottom-2 duration-300">
-          <div className="flex items-center gap-2 border-b border-[#D4AF37]/20 pb-2">
-            <Music className="w-4 h-4 text-[#C5A059] animate-bounce" />
-            <div className="text-left">
-              <p className="text-xs font-semibold text-[#2C2420] tracking-wide font-sans line-clamp-1">
-                {weddingConfig.audio.title}
-              </p>
-              <p className="text-[10px] text-[#7A6F68] font-sans">
-                {weddingConfig.audio.artist}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between gap-3">
-            <button
-              onClick={toggleMute}
-              className="text-[#7A6F68] hover:text-[#C5A059] transition-colors p-1"
-              aria-label={isMuted ? "Unmute audio" : "Mute audio"}
-            >
-              {isMuted || volume === 0 ? (
-                <VolumeX className="w-4 h-4 text-[#B33951]" />
-              ) : (
-                <Volume2 className="w-4 h-4" />
-              )}
-            </button>
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.05"
-              value={isMuted ? 0 : volume}
-              onChange={handleVolumeChange}
-              className="w-full h-1.5 bg-[#E8DEC8] accent-[#C5A059] rounded-lg cursor-pointer"
-              aria-label="Volume slider"
-            />
-            <span className="text-[10px] text-[#7A6F68] font-mono min-w-[28px] text-right">
-              {Math.round((isMuted ? 0 : volume) * 100)}%
-            </span>
-          </div>
-
-          {hasError && (
-            <p className="text-[10px] text-[#B33951] italic text-center">
-              Tap play button to start sound
-            </p>
-          )}
-        </div>
-      )}
-
-      {/* Floating Pill Player Button */}
-      <div className="flex items-center gap-2 bg-[#FAF6F0]/90 backdrop-blur-md border border-[#D4AF37] px-3.5 py-2.5 rounded-full shadow-lg hover:shadow-xl hover:border-[#AA771C] transition-all group">
+    <div className="fixed top-4 right-4 sm:top-5 sm:right-6 z-40 flex flex-col items-end">
+      {/* Floating Pill Header */}
+      <div className="flex items-center gap-2 bg-[#FAF6F0]/95 backdrop-blur-md border border-[#D4AF37] px-3.5 py-2 rounded-full shadow-lg hover:shadow-xl hover:border-[#AA771C] transition-all group">
         {/* Equalizer Waveform Bars */}
         <div
           onClick={() => setShowControls(!showControls)}
           className="flex items-center gap-[3px] h-4 cursor-pointer px-1"
-          title="Click to adjust volume & song info"
+          title="Adjust volume & track information"
         >
           <span
             className={`w-[3px] bg-[#C5A059] rounded-full transition-all duration-300 ${
@@ -142,25 +92,75 @@ export default function MusicPlayer({ audioRef, isPlaying, setIsPlaying }) {
         {/* Play / Pause Toggle Button */}
         <button
           onClick={togglePlay}
-          className="w-8 h-8 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform cursor-pointer"
           aria-label={isPlaying ? 'Pause wedding music' : 'Play wedding music'}
         >
           {isPlaying ? (
-            <Pause className="w-4 h-4 fill-current" />
+            <Pause className="w-3.5 h-3.5 fill-current" />
           ) : (
-            <Play className="w-4 h-4 fill-current ml-0.5" />
+            <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
           )}
         </button>
 
-        {/* Track Label */}
+        {/* Track Label on Desktop */}
         <button
           onClick={() => setShowControls(!showControls)}
-          className="hidden sm:flex items-center gap-1.5 text-xs text-[#2C2420] font-sans font-medium tracking-wide pr-1"
+          className="hidden sm:flex items-center gap-1.5 text-xs text-[#2C2420] font-sans font-medium tracking-wide pr-1 cursor-pointer"
         >
-          <span>{isPlaying ? 'Playing Wedding Song' : 'Music Paused'}</span>
+          <span>{isPlaying ? 'Wedding Music' : 'Paused'}</span>
           <Flower2 className="w-3 h-3 text-[#C5A059]" />
         </button>
       </div>
+
+      {/* Expanded Controls Dropdown on Click/Tap */}
+      {showControls && (
+        <div className="mt-2.5 p-3.5 sm:p-4 bg-[#FAF6F0]/95 backdrop-blur-md border border-[#D4AF37]/50 rounded-2xl shadow-xl shadow-[#2C2420]/10 flex flex-col gap-2.5 min-w-[220px] sm:min-w-[240px] animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="flex items-center gap-2 border-b border-[#D4AF37]/20 pb-2">
+            <Music className="w-4 h-4 text-[#C5A059] animate-bounce" />
+            <div className="text-left">
+              <p className="text-xs font-semibold text-[#2C2420] tracking-wide font-sans line-clamp-1">
+                {weddingConfig.audio.title}
+              </p>
+              <p className="text-[10px] text-[#7A6F68] font-sans">
+                {weddingConfig.audio.artist}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between gap-3">
+            <button
+              onClick={toggleMute}
+              className="text-[#7A6F68] hover:text-[#C5A059] transition-colors p-1 cursor-pointer"
+              aria-label={isMuted ? 'Unmute audio' : 'Mute audio'}
+            >
+              {isMuted || volume === 0 ? (
+                <VolumeX className="w-4 h-4 text-[#B33951]" />
+              ) : (
+                <Volume2 className="w-4 h-4" />
+              )}
+            </button>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value={isMuted ? 0 : volume}
+              onChange={handleVolumeChange}
+              className="w-full h-1.5 bg-[#E8DEC8] accent-[#C5A059] rounded-lg cursor-pointer"
+              aria-label="Volume slider"
+            />
+            <span className="text-[10px] text-[#7A6F68] font-mono min-w-[28px] text-right">
+              {Math.round((isMuted ? 0 : volume) * 100)}%
+            </span>
+          </div>
+
+          {hasError && (
+            <p className="text-[10px] text-[#B33951] italic text-center">
+              Tap play button to start sound
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 }

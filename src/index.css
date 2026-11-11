@@ -45,8 +45,21 @@
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
+/* Grand Royal Script: Parisienne - Balanced, fluid, regal calligraphy with prominent, unclipped J & N */
 .font-script {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Parisienne', 'Allura', 'Alex Brush', cursive;
+}
+
+.font-parisienne {
+  font-family: 'Parisienne', cursive;
+}
+
+.font-allura {
+  font-family: 'Allura', cursive;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .font-brush {
@@ -65,19 +78,43 @@
   font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
 }
 
-/* Gold Gradient Effects */
+/* Gold Gradient Effects - Padded with negative margin so ascenders/descenders never clip */
 .gold-text-gradient {
   background: linear-gradient(135deg, #B8860B 0%, #D4AF37 35%, #F3E5AB 70%, #AA771C 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: #C5A059;
+  display: inline-block;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  margin-top: -0.25em;
+  margin-bottom: -0.25em;
+  margin-left: -0.2em;
+  margin-right: -0.2em;
+  overflow: visible;
 }
 
 .gold-shimmer-text {
   background: linear-gradient(90deg, #99732B 0%, #D4AF37 25%, #FFF2B2 50%, #D4AF37 75%, #99732B 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: #C5A059;
+  display: inline-block;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  margin-top: -0.25em;
+  margin-bottom: -0.25em;
+  margin-left: -0.2em;
+  margin-right: -0.2em;
   animation: goldShimmer 4s linear infinite;
+  overflow: visible;
 }
 
 @keyframes goldShimmer {

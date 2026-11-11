@@ -64,15 +64,15 @@ export default function ReceptionSection() {
           </span>
           <Flower2 className="w-4 h-4 text-[#C5A059]" />
         </div>
-        <h2 className="font-script text-4xl sm:text-6xl text-[#2C2420] tracking-wide">
+        <h2 className="font-script text-4xl sm:text-6xl text-[#2C2420] tracking-wide leading-[1.3] pt-2 pb-1 overflow-visible">
           Wedding Reception
         </h2>
         <p className="font-cormorant italic text-lg sm:text-xl text-[#7A6F68] mt-2 max-w-2xl mx-auto leading-relaxed">
-          Together with their families, {couple.groom} &amp; {couple.bride} invite you to an auspicious evening of celebrations, heartfelt blessings, and feast.
+          Together with their families, {couple.groom} &amp; <span className="inline-block text-[1.08em]">N</span>imisha invite you to an auspicious evening of celebrations, heartfelt blessings, and feast.
         </p>
       </motion.div>
 
-      {/* Grand Reception Card (Champagne Gold Styling) */}
+      {/* Grand Reception Card */}
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -158,25 +158,16 @@ export default function ReceptionSection() {
         </div>
 
         {/* Card Footer Actions */}
-        <div className="mt-12 pt-8 border-t border-[#D4AF37]/30 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-10 pt-6 border-t border-[#D4AF37]/30 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={handleAddToCalendar}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white font-sans text-xs uppercase tracking-[0.2em] font-semibold shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer"
+            className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#C5A059] to-[#9B782E] text-white font-sans text-xs uppercase tracking-[0.2em] font-semibold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all cursor-pointer group"
           >
-            <CalendarPlus className="w-4 h-4" />
-            <span>Add to Calendar</span>
+            <CalendarPlus className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+            <span>Add Reception to Google Calendar</span>
           </button>
-
-          <a
-            href={venue.googleMapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/80 hover:bg-white border border-[#D4AF37] text-[#2C2420] font-sans text-xs uppercase tracking-[0.2em] font-semibold shadow-sm hover:scale-105 active:scale-95 transition-all"
-          >
-            <MapPin className="w-4 h-4 text-[#B33951]" />
-            <span>View Venue on Maps</span>
-          </a>
         </div>
+
       </motion.div>
     </section>
   );

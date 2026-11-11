@@ -28,7 +28,7 @@ export default function VenueSection() {
           </span>
           <MapPin className="w-4 h-4 text-[#C5A059]" />
         </div>
-        <h2 className="font-script text-4xl sm:text-6xl text-[#2C2420] tracking-wide">
+        <h2 className="font-script text-4xl sm:text-6xl text-[#2C2420] tracking-wide leading-[1.3] pt-2 pb-1 overflow-visible">
           Wedding Venue
         </h2>
         <p className="font-cormorant italic text-lg sm:text-xl text-[#7A6F68] mt-2">
@@ -52,7 +52,7 @@ export default function VenueSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          {/* Venue Information Column (Span 7) */}
+          {/* Venue Information Column */}
           <div className="lg:col-span-7 text-left space-y-6">
             <div>
               <span className="font-cinzel text-xs text-[#9B782E] font-semibold tracking-[0.3em] uppercase block mb-1">
@@ -72,7 +72,6 @@ export default function VenueSection() {
                 <p className="font-tenor text-xs uppercase tracking-wider text-[#9B782E] font-semibold">
                   Complete Address
                 </p>
-                {/* Rendered in font-sans to guarantee MR-10 displays standard tall lining numerals 1 and 0, not old-style io */}
                 <p className="font-sans text-base sm:text-lg text-[#2C2420] font-medium leading-snug mt-1">
                   <span className="font-semibold tracking-wide">MR-10</span>, Near Bridge, New Bus Stand, Indore, Madhya Pradesh, India
                 </p>
@@ -121,10 +120,9 @@ export default function VenueSection() {
             </div>
           </div>
 
-          {/* Interactive Map Preview Column (Span 5) */}
+          {/* Interactive Map Preview Column */}
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl overflow-hidden border-2 border-[#D4AF37]/50 shadow-lg aspect-[4/3] bg-[#E8DEC9] group">
-              {/* Reliable OpenStreetMap interactive map centered on MR-10 near New Bus Stand, Indore */}
               <iframe
                 title="Eden Garden Indore Map"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=75.8450%2C22.7520%2C75.8850%2C22.7820&layer=mapnik&marker=22.7695%2C75.8642"
@@ -150,7 +148,7 @@ export default function VenueSection() {
                   href={venue.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pointer-events-auto px-3 py-1 rounded-full bg-[#17120F]/85 backdrop-blur-sm text-[11px] font-sans font-medium text-[#FAF6F0] hover:text-[#E6CA65] shadow transition-colors flex items-center gap-1.5"
+                  className="pointer-events-auto px-3 py-1 rounded-full bg-[#17120F]/90 backdrop-blur-sm text-[11px] font-sans font-medium text-[#FAF6F0] hover:text-[#E6CA65] shadow transition-colors flex items-center gap-1.5"
                   title="Open live navigation in Google Maps"
                 >
                   <Navigation className="w-3 h-3 text-[#E6CA65]" />

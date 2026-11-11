@@ -4,15 +4,14 @@ import { Clock, Heart } from 'lucide-react';
 import { weddingConfig } from '../data/weddingConfig';
 
 /**
- * WeddingCountdown - Live countdown to 24 November 2026
- * Updates every second with luxury gold cards and celebration message fallback
+ * WeddingCountdown - Live countdown to Jay & Nimisha's Wedding Reception
+ * Target: 24 November 2026, 7:00 PM IST (2026-11-24T19:00:00)
  */
 export default function WeddingCountdown() {
-  const targetDate = new Date(weddingConfig.weddingDate.countdownTarget).getTime();
-
   const calculateTimeLeft = () => {
-    const now = new Date().getTime();
-    const difference = targetDate - now;
+    const targetDate = new Date(weddingConfig.weddingDate.countdownTarget || '2026-11-24T19:00:00');
+    const now = new Date();
+    const difference = targetDate.getTime() - now.getTime();
 
     if (difference <= 0) {
       return { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true };
@@ -33,8 +32,9 @@ export default function WeddingCountdown() {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
+
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, []);
 
   const units = [
     { label: 'Days', value: timeLeft.days },
@@ -61,7 +61,7 @@ export default function WeddingCountdown() {
           </span>
           <Clock className="w-4 h-4 text-[#C5A059]" />
         </div>
-        <h2 className="font-script text-4xl sm:text-5xl text-[#2C2420] tracking-wide">
+        <h2 className="font-script text-4xl sm:text-5xl text-[#2C2420] tracking-wide leading-[1.3] pt-2 pb-1 overflow-visible">
           Until We Say &ldquo;I Do&rdquo;
         </h2>
         <p className="font-cormorant italic text-lg sm:text-xl text-[#7A6F68] mt-1">
@@ -76,12 +76,12 @@ export default function WeddingCountdown() {
           animate={{ opacity: 1, scale: 1 }}
           className="p-8 rounded-3xl bg-gradient-to-r from-[#FAF6F0] via-[#FFFDF9] to-[#FAF6F0] border-2 border-[#D4AF37] shadow-xl"
         >
-          <Heart className="w-8 h-8 text-[#B33951] fill-[#B33951] mx-auto mb-2 animate-bounce" />
-          <h3 className="font-script text-4xl sm:text-5xl text-[#B33951] font-bold">
+          <Heart className="w-8 h-8 text-[#B33951] fill-current mx-auto mb-2 animate-bounce" />
+          <h3 className="font-script text-4xl sm:text-5xl text-[#B33951] font-bold leading-[1.3] pt-2 pb-1 overflow-visible">
             Today is Our Wedding Day!
           </h3>
           <p className="font-cormorant italic text-xl text-[#7A6F68] mt-2 max-w-md mx-auto">
-            Jay &amp; Nimisha are celebrating their wedding reception at Eden Garden. Thank you for showering your heartfelt love and blessings!
+            Jay &amp; <span className="inline-block text-[1.08em]">N</span>imisha are celebrating their wedding reception at Eden Garden. Thank you for showering your heartfelt love and blessings!
           </p>
         </motion.div>
       ) : (
@@ -115,12 +115,6 @@ export default function WeddingCountdown() {
         </div>
       )}
 
-      {/* Decorative Footnote */}
-      <div className="mt-8 flex items-center justify-center gap-3 text-[#D4AF37]">
-        <span className="w-12 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]" />
-        <Heart className="w-3.5 h-3.5 fill-[#B33951] text-[#B33951]" />
-        <span className="w-12 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]" />
-      </div>
     </section>
   );
 }

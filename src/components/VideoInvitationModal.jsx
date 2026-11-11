@@ -224,8 +224,8 @@ export default function VideoInvitationModal({ isOpen, onClose, onVideoPlay, onV
                       </p>
                       <Heart className="w-3.5 h-3.5 text-[#B33951] fill-[#B33951]" />
                     </div>
-                    <h2 className="font-script text-5xl sm:text-7xl text-[#FAF6F0] gold-text-gradient font-bold leading-tight">
-                      {couple.groom} &amp; {couple.bride}
+                    <h2 className="font-script text-5xl sm:text-7xl text-[#FAF6F0] gold-text-gradient font-bold leading-[1.35] pt-3 pb-2 px-2 overflow-visible">
+                      {couple.groom} &amp; <span className="inline-block text-[1.12em]">N</span>imisha
                     </h2>
                     <p className="font-cormorant italic text-lg sm:text-2xl text-[#D8CFB5]">
                       Two hearts, one beautiful journey, and a lifetime of togetherness.
@@ -292,7 +292,7 @@ export default function VideoInvitationModal({ isOpen, onClose, onVideoPlay, onV
                       Your Presence is Our Greatest Blessing
                     </h3>
                     <p className="font-cormorant italic text-lg sm:text-xl text-[#E6CA65]">
-                      With Love &amp; Regards &bull; {couple.groom} &amp; {couple.bride}
+                      With Love &amp; Regards &bull; {couple.groom} &amp; <span className="inline-block text-[1.08em]">N</span>imisha
                     </p>
                   </motion.div>
                 )}
