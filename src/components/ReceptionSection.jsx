@@ -68,7 +68,7 @@ export default function ReceptionSection() {
           Wedding Reception
         </h2>
         <p className="font-cormorant italic text-lg sm:text-xl text-[#7A6F68] mt-2 max-w-2xl mx-auto leading-relaxed">
-          Together with their families, {couple.groom} &amp; <span className="inline-block text-[1.08em]">N</span>imisha invite you to an auspicious evening of celebrations, heartfelt blessings, and feast.
+          Together with their families, <span className="whitespace-nowrap">{couple.groom}</span> &amp; <span className="whitespace-nowrap">{couple.bride}</span> invite you to an auspicious evening of celebrations, heartfelt blessings, and feast.
         </p>
       </motion.div>
 
@@ -93,13 +93,17 @@ export default function ReceptionSection() {
         <div className="absolute bottom-4 right-4 w-10 h-10 border-b-2 border-r-2 border-[#D4AF37]" />
 
         {/* Header Banner */}
-        <div className="text-center pb-8 border-b border-[#D4AF37]/40">
-          <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-[#D4AF37]/20 via-[#FFF2B2]/40 to-[#D4AF37]/20 border border-[#D4AF37] font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-[#9B782E] mb-2">
-            {reception.badge}
-          </span>
-          <h3 className="font-cormorant text-4xl sm:text-6xl font-bold text-[#2C2420] gold-shimmer-text">
-            {reception.date}
-          </h3>
+        <div className="text-center pb-8 border-b border-[#D4AF37]/40 flex flex-col items-center">
+          <div className="mb-3">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-[#D4AF37]/20 via-[#FFF2B2]/40 to-[#D4AF37]/20 border border-[#D4AF37] font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-[#9B782E]">
+              {reception.badge}
+            </span>
+          </div>
+          <div className="w-full text-center my-1">
+            <h3 className="font-cormorant text-4xl sm:text-6xl font-bold text-[#2C2420] gold-shimmer-text">
+              {reception.date}
+            </h3>
+          </div>
           <p className="font-cinzel text-lg sm:text-xl text-[#B33951] font-bold tracking-widest mt-1">
             {reception.weekday.toUpperCase()}
           </p>

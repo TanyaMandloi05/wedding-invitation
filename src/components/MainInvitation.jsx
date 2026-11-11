@@ -74,15 +74,15 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
         transition={{ duration: 1, delay: 0.35 }}
         className="my-3 sm:my-5 relative overflow-visible"
       >
-        <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-[#2C2420] tracking-wide leading-[1.35] pt-8 pb-4 px-4 overflow-visible">
-          <span className="gold-text-gradient font-bold drop-shadow-[0_4px_12px_rgba(197,160,89,0.25)] inline-block">
-            Jay
+        <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-[#2C2420] tracking-wide leading-tight pt-4 pb-2 px-2 overflow-visible">
+          <span className="gold-text-gradient font-bold drop-shadow-[0_4px_12px_rgba(197,160,89,0.25)] whitespace-nowrap inline-block">
+            {couple.groom}
           </span>
           <span className="font-cormorant italic text-3xl sm:text-5xl md:text-6xl text-[#B33951] mx-3 sm:mx-5 font-normal align-middle">
             &amp;
           </span>
-          <span className="gold-text-gradient font-bold drop-shadow-[0_4px_12px_rgba(197,160,89,0.25)] inline-block">
-            <span className="inline-block text-[1.12em]">N</span>imisha
+          <span className="gold-text-gradient font-bold drop-shadow-[0_4px_12px_rgba(197,160,89,0.25)] whitespace-nowrap inline-block">
+            {couple.bride}
           </span>
         </h1>
 

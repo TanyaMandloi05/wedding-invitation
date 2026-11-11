@@ -45,9 +45,13 @@
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
-/* Grand Royal Script: Parisienne - Balanced, fluid, regal calligraphy with prominent, unclipped J & N */
+/* Grand Royal Wedding Typography: Cormorant Garamond & Playfair Display
+   Genuine, unmistakable uppercase J (zero confusion with F or G)
+   Stately, royal uppercase N, flawless high-end palace wedding aesthetic */
 .font-script {
-  font-family: 'Parisienne', 'Allura', 'Alex Brush', cursive;
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-style: normal;
+  letter-spacing: 0.03em;
 }
 
 .font-parisienne {
@@ -78,7 +82,7 @@
   font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
 }
 
-/* Gold Gradient Effects - Padded with negative margin so ascenders/descenders never clip */
+/* Gold Gradient Effects - Padded safely so ascenders/descenders never clip */
 .gold-text-gradient {
   background: linear-gradient(135deg, #B8860B 0%, #D4AF37 35%, #F3E5AB 70%, #AA771C 100%);
   -webkit-background-clip: text;
@@ -86,14 +90,10 @@
   -webkit-text-fill-color: transparent;
   color: #C5A059;
   display: inline-block;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  padding-left: 0.2em;
-  padding-right: 0.2em;
-  margin-top: -0.25em;
-  margin-bottom: -0.25em;
-  margin-left: -0.2em;
-  margin-right: -0.2em;
+  padding-top: 0.18em;
+  padding-bottom: 0.18em;
+  padding-left: 0.08em;
+  padding-right: 0.08em;
   overflow: visible;
 }
 
@@ -105,14 +105,10 @@
   -webkit-text-fill-color: transparent;
   color: #C5A059;
   display: inline-block;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  padding-left: 0.2em;
-  padding-right: 0.2em;
-  margin-top: -0.25em;
-  margin-bottom: -0.25em;
-  margin-left: -0.2em;
-  margin-right: -0.2em;
+  padding-top: 0.18em;
+  padding-bottom: 0.18em;
+  padding-left: 0.08em;
+  padding-right: 0.08em;
   animation: goldShimmer 4s linear infinite;
   overflow: visible;
 }

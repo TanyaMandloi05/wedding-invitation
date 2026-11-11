@@ -267,7 +267,7 @@ export default function ScratchReveal() {
               {weddingConfig.weddingDate.fullDateString.toUpperCase()}
             </h3>
             <p className="font-script text-3xl sm:text-4xl text-[#B33951] mt-1 font-semibold leading-[1.3] pt-2 pb-1 overflow-visible">
-              {weddingConfig.couple.groom} &amp; <span className="inline-block text-[1.12em]">N</span>imisha
+              <span className="whitespace-nowrap">{weddingConfig.couple.groom}</span> &amp; <span className="whitespace-nowrap">{weddingConfig.couple.bride}</span>
             </p>
             <p className="font-sans text-[10px] tracking-widest uppercase text-[#7A6F68] mt-2">
               Eden Garden &bull; Indore, India

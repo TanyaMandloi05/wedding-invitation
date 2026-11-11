@@ -128,10 +128,10 @@ export default function OpeningEnvelope({ onOpenInvitation, isOpened }) {
 
               {/* Card Center Couple Names (Groom First: Jay & Nimisha) */}
               <div className="my-auto py-2 overflow-visible">
-                <h1 className="font-script text-4xl sm:text-5xl text-[#2C2420] tracking-wide leading-[1.35] pt-4 pb-2 px-2 overflow-visible">
-                  <span className="gold-text-gradient font-bold inline-block">{weddingConfig.couple.groom}</span>
-                  <span className="font-cormorant italic text-2xl sm:text-3xl text-[#B33951] mx-2 font-normal">&amp;</span>
-                  <span className="gold-text-gradient font-bold inline-block"><span className="inline-block text-[1.12em]">N</span>imisha</span>
+                <h1 className="font-script text-3xl sm:text-5xl text-[#2C2420] tracking-wide leading-tight pt-2 pb-1 px-1 overflow-visible">
+                  <span className="gold-text-gradient font-bold whitespace-nowrap inline-block">{weddingConfig.couple.groom}</span>
+                  <span className="font-cormorant italic text-xl sm:text-3xl text-[#B33951] mx-2 font-normal align-middle">&amp;</span>
+                  <span className="gold-text-gradient font-bold whitespace-nowrap inline-block">{weddingConfig.couple.bride}</span>
                 </h1>
                 <p className="font-cormorant italic text-sm sm:text-base text-[#7A6F68] mt-2 max-w-[280px] mx-auto leading-tight">
                   Two hearts, one beautiful journey, and a lifetime of togetherness.

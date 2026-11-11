@@ -81,7 +81,7 @@ export default function WeddingCountdown() {
             Today is Our Wedding Day!
           </h3>
           <p className="font-cormorant italic text-xl text-[#7A6F68] mt-2 max-w-md mx-auto">
-            Jay &amp; <span className="inline-block text-[1.08em]">N</span>imisha are celebrating their wedding reception at Eden Garden. Thank you for showering your heartfelt love and blessings!
+            <span className="whitespace-nowrap">{weddingConfig.couple.groom}</span> &amp; <span className="whitespace-nowrap">{weddingConfig.couple.bride}</span> are celebrating their wedding reception at Eden Garden. Thank you for showering your heartfelt love and blessings!
           </p>
         </motion.div>
       ) : (

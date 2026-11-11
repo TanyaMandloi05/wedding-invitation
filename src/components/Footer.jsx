@@ -49,10 +49,10 @@ export default function Footer({ onReopenEnvelope }) {
           <p className="font-tenor text-xs uppercase tracking-[0.3em] text-[#9B782E] mb-2 font-semibold">
             {invitationMessage.signoff}
           </p>
-          <h3 className="font-script text-5xl sm:text-7xl text-[#2C2420] font-bold leading-[1.35] pt-6 pb-3 px-3 overflow-visible">
-            <span className="gold-text-gradient inline-block">{couple.groom}</span>
-            <span className="font-cormorant italic text-3xl sm:text-4xl text-[#B33951] mx-3">&amp;</span>
-            <span className="gold-text-gradient inline-block"><span className="inline-block text-[1.12em]">N</span>imisha</span>
+          <h3 className="font-script text-4xl sm:text-6xl text-[#2C2420] font-bold leading-tight pt-3 pb-2 px-2 overflow-visible">
+            <span className="gold-text-gradient whitespace-nowrap inline-block">{couple.groom}</span>
+            <span className="font-cormorant italic text-2xl sm:text-4xl text-[#B33951] mx-3 align-middle">&amp;</span>
+            <span className="gold-text-gradient whitespace-nowrap inline-block">{couple.bride}</span>
           </h3>
           <p className="font-cinzel text-xs text-[#B33951] tracking-widest mt-2 font-semibold">
             {couple.hashtag}
@@ -78,7 +78,7 @@ export default function Footer({ onReopenEnvelope }) {
           <div className="flex items-center justify-center gap-1.5 text-[11px] text-[#7A6F68]">
             <span>Crafted with love for</span>
             <Heart className="w-3 h-3 text-[#B33951] fill-current inline" />
-            <span className="font-semibold text-[#2C2420]">{couple.groom} &amp; <span className="inline-block text-[1.08em]">N</span>imisha</span>
+            <span className="font-semibold text-[#2C2420]"><span className="whitespace-nowrap">{couple.groom}</span> &amp; <span className="whitespace-nowrap">{couple.bride}</span></span>
             <span>&bull; {currentYear}</span>
           </div>
         </div>

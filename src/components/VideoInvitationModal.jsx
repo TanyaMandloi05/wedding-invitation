@@ -224,8 +224,10 @@ export default function VideoInvitationModal({ isOpen, onClose, onVideoPlay, onV
                       </p>
                       <Heart className="w-3.5 h-3.5 text-[#B33951] fill-[#B33951]" />
                     </div>
-                    <h2 className="font-script text-5xl sm:text-7xl text-[#FAF6F0] gold-text-gradient font-bold leading-[1.35] pt-3 pb-2 px-2 overflow-visible">
-                      {couple.groom} &amp; <span className="inline-block text-[1.12em]">N</span>imisha
+                    <h2 className="font-script text-4xl sm:text-6xl text-[#FAF6F0] gold-text-gradient font-bold leading-tight pt-2 pb-2 px-2 overflow-visible">
+                      <span className="whitespace-nowrap">{couple.groom}</span>
+                      <span className="font-cormorant italic text-2xl sm:text-4xl text-[#E6CA65] mx-2 align-middle">&amp;</span>
+                      <span className="whitespace-nowrap">{couple.bride}</span>
                     </h2>
                     <p className="font-cormorant italic text-lg sm:text-2xl text-[#D8CFB5]">
                       Two hearts, one beautiful journey, and a lifetime of togetherness.
@@ -243,12 +245,16 @@ export default function VideoInvitationModal({ isOpen, onClose, onVideoPlay, onV
                     transition={{ duration: 0.8 }}
                     className="space-y-4"
                   >
-                    <span className="inline-block px-4 py-1 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] font-cinzel text-xs text-[#E6CA65] tracking-widest uppercase font-semibold">
-                      Save The Auspicious Date
-                    </span>
-                    <h3 className="font-cormorant text-4xl sm:text-6xl font-bold text-[#FAF6F0] gold-shimmer-text">
-                      {reception.date}
-                    </h3>
+                    <div className="flex justify-center">
+                      <span className="inline-block px-4 py-1 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] font-cinzel text-xs text-[#E6CA65] tracking-widest uppercase font-semibold">
+                        Save The Auspicious Date
+                      </span>
+                    </div>
+                    <div className="w-full text-center">
+                      <h3 className="font-cormorant text-4xl sm:text-6xl font-bold text-[#FAF6F0] gold-shimmer-text">
+                        {reception.date}
+                      </h3>
+                    </div>
                     <p className="font-cinzel text-base sm:text-lg text-[#E2959D] tracking-widest font-semibold">
                       {reception.weekday.toUpperCase()} &bull; 7:00 PM ONWARDS
                     </p>
@@ -292,7 +298,7 @@ export default function VideoInvitationModal({ isOpen, onClose, onVideoPlay, onV
                       Your Presence is Our Greatest Blessing
                     </h3>
                     <p className="font-cormorant italic text-lg sm:text-xl text-[#E6CA65]">
-                      With Love &amp; Regards &bull; {couple.groom} &amp; <span className="inline-block text-[1.08em]">N</span>imisha
+                      With Love &amp; Regards &bull; <span className="whitespace-nowrap">{couple.groom}</span> &amp; <span className="whitespace-nowrap">{couple.bride}</span>
                     </p>
                   </motion.div>
                 )}

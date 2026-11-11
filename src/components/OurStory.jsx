@@ -100,8 +100,8 @@ export default function OurStory() {
           <p className="font-tenor text-xs tracking-[0.3em] uppercase text-[#9B782E] mb-1">
             {couple.brideTitle}
           </p>
-          <h3 className="font-script text-4xl sm:text-5xl text-[#2C2420] font-bold leading-[1.35] pt-3 pb-2 px-2 overflow-visible">
-            <span className="inline-block text-[1.12em]">N</span>imisha
+          <h3 className="font-script text-4xl sm:text-5xl text-[#2C2420] font-bold leading-tight pt-2 pb-1 px-1 overflow-visible">
+            <span className="whitespace-nowrap">{couple.bride}</span>
           </h3>
           <p className="font-cormorant text-base sm:text-lg text-[#615650] mt-3 leading-relaxed">
             {couple.brideBio}
