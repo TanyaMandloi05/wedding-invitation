@@ -57,7 +57,7 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
         </button>
       </motion.div>
 
-      {/* Invitation Header Message with Highlighted Sabarwal Family */}
+      {/* Invitation Header Message with Highlighted Tanwar & Sabarwal Family */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
             Together with love and blessings,
           </p>
           <p className="font-cinzel text-xl sm:text-2xl md:text-3xl font-bold text-[#8C1D40] tracking-wider my-1 drop-shadow-[0_1px_2px_rgba(140,29,64,0.12)]">
-            The Sabarwal Family
+            Tanwar &amp; Sabarwal Family
           </p>
           <p className="font-cormorant text-base sm:text-xl text-[#5A4D45] leading-relaxed">
             invites you to celebrate the wedding reception of

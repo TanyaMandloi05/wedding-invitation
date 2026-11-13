@@ -31,8 +31,8 @@ export const weddingConfig = {
 
   // Main Invitation Texts
   invitationMessage: {
-    header: "Together with love and blessings, the Sabarwal Family invites you to celebrate the wedding reception of",
-    familyHighlight: "the Sabarwal Family",
+    header: "Together with love and blessings, Tanwar & Sabarwal Family invites you to celebrate the wedding reception of",
+    familyHighlight: "Tanwar & Sabarwal Family",
     subheading: "Two hearts, one beautiful journey, and a lifetime of togetherness.",
     body: "Join us as we celebrate our wedding reception and create memories that will last forever.",
     closing: "Your Presence Will Make Our Celebration More Special.",
