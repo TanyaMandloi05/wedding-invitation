@@ -67,9 +67,12 @@ export default function OurStory() {
           <p className="font-tenor text-xs tracking-[0.3em] uppercase text-[#9B782E] mb-1">
             {couple.groomTitle}
           </p>
-          <h3 className="font-script text-4xl sm:text-5xl text-[#2C2420] font-bold leading-[1.35] pt-3 pb-2 px-2 overflow-visible">
-            {couple.groom}
+          <h3 className="font-script text-4xl sm:text-5xl text-[#2C2420] font-bold leading-tight pt-2 pb-1 px-1 overflow-visible">
+            <span className="whitespace-nowrap">{couple.groom}</span>
           </h3>
+          <p className="font-cormorant italic text-base sm:text-xl text-[#9B782E] font-semibold mt-1 tracking-wide">
+            {couple.groomParents}
+          </p>
           <p className="font-cormorant text-base sm:text-lg text-[#615650] mt-3 leading-relaxed">
             {couple.groomBio}
           </p>
@@ -103,6 +106,9 @@ export default function OurStory() {
           <h3 className="font-script text-4xl sm:text-5xl text-[#2C2420] font-bold leading-tight pt-2 pb-1 px-1 overflow-visible">
             <span className="whitespace-nowrap">{couple.bride}</span>
           </h3>
+          <p className="font-cormorant italic text-base sm:text-xl text-[#9B782E] font-semibold mt-1 tracking-wide">
+            {couple.brideParents}
+          </p>
           <p className="font-cormorant text-base sm:text-lg text-[#615650] mt-3 leading-relaxed">
             {couple.brideBio}
           </p>

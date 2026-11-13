@@ -57,15 +57,25 @@ export default function MainInvitation({ onScrollDown, onOpenVideo }) {
         </button>
       </motion.div>
 
-      {/* Invitation Header Message */}
-      <motion.p
+      {/* Invitation Header Message with Highlighted Sabarwal Family */}
+      <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="font-cormorant text-base sm:text-xl text-[#7A6F68] max-w-2xl mx-auto leading-relaxed px-4"
+        className="max-w-3xl mx-auto px-4 my-2 text-center"
       >
-        {invitationMessage.header}
-      </motion.p>
+        <div className="inline-block px-5 py-3 sm:px-8 sm:py-4 rounded-2xl bg-gradient-to-r from-[#FFFDF9]/95 via-[#FAF3E6]/90 to-[#FFFDF9]/95 border border-[#D4AF37]/60 shadow-[0_4px_20px_rgba(197,160,89,0.18)]">
+          <p className="font-cormorant text-base sm:text-xl text-[#5A4D45] leading-relaxed">
+            Together with love and blessings,
+          </p>
+          <p className="font-cinzel text-xl sm:text-2xl md:text-3xl font-bold text-[#8C1D40] tracking-wider my-1 drop-shadow-[0_1px_2px_rgba(140,29,64,0.12)]">
+            The Sabarwal Family
+          </p>
+          <p className="font-cormorant text-base sm:text-xl text-[#5A4D45] leading-relaxed">
+            invites you to celebrate the wedding reception of
+          </p>
+        </div>
+      </motion.div>
 
       {/* Couple's Names: Groom Jay FIRST, then Bride Nimisha (With Prominent Capital N, No Clipping) */}
       <motion.div

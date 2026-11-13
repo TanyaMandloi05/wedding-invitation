@@ -12,6 +12,8 @@ export const weddingConfig = {
     hashtag: "#JayWedsNimisha",
     groomTitle: "The Groom",
     brideTitle: "The Bride",
+    groomParents: "S/o Taruna & Shailendra Singh Tanwar",
+    brideParents: "D/o Jyoti & Bhushan Sabarwal",
     groomBio: "A new chapter begins for Jay and Nimisha. We're excited to celebrate this special occasion with the people who mean so much to them.",
     brideBio: "A new chapter begins for Jay and Nimisha. We're excited to celebrate this special occasion with the people who mean so much to them.",
   },
@@ -29,7 +31,8 @@ export const weddingConfig = {
 
   // Main Invitation Texts
   invitationMessage: {
-    header: "Together with love and blessings, we invite you to celebrate the wedding reception of",
+    header: "Together with love and blessings, the Sabarwal Family invites you to celebrate the wedding reception of",
+    familyHighlight: "the Sabarwal Family",
     subheading: "Two hearts, one beautiful journey, and a lifetime of togetherness.",
     body: "Join us as we celebrate our wedding reception and create memories that will last forever.",
     closing: "Your Presence Will Make Our Celebration More Special.",
